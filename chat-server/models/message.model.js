@@ -17,5 +17,5 @@ const MessageSchema = new mongoose.Schema(
     }
 );
 
-const MessageModel = mongoose.model("Message", MessageSchema, "chat_realtime_db");
+const MessageModel = mongoose.model("Message", MessageSchema, "messages");
 export default MessageModel

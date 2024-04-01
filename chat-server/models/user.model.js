@@ -18,5 +18,5 @@ const UserSchema = mongoose.Schema(
     { timestamps: true }
 )
 
-const UserModel = mongoose.model("Users", UserSchema, "chat_realtime_db");
+const UserModel = mongoose.model("Users", UserSchema, "users");
 export default UserModel;
