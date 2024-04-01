@@ -30,6 +30,23 @@ export const getUser = async (req, res) => {
     }
 };
 
+export const getUserByAccountUserId = async (req, res) => {
+    const id = req.params.accountUserId;
+
+    try {
+        const user = await UserModel.findOne({ accountUserId: id });
+        if (user) {
+            const { password, ...otherDetails } = user._doc;
+
+            res.status(200).json(otherDetails);
+        } else {
+            res.status(404).json("User not found");
+        }
+    } catch (error) {
+        res.status(500).json(error);
+    }
+}
+
 // Get all users
 export const getAllUsers = async (req, res) => {
 
